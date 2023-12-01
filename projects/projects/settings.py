@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'singup'
+    'singup',
+    'taskapp',
+    'courses',
 ]
 
 MIDDLEWARE = [

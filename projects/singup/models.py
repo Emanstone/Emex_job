@@ -39,7 +39,7 @@ class Profile(models.Model):
     email_code = models.CharField(max_length=6, blank=True, null=True)
     location = models.CharField(max_length=100, blank=True, null=True)
     state = models.CharField(max_length=10, blank=True, null=True)
-    username = models.CharField(max_length=50, unique=True)
+    username = models.CharField(max_length=50)
     current_digital_skills = models.TextField(blank=True, null=True)
     twitter_handle = models.CharField(max_length=100, blank=True, null=True)
     facebook_handle = models.CharField(max_length=100, blank=True, null=True)

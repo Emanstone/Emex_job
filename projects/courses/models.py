@@ -16,9 +16,9 @@ class Createcourse(models.Model):
         return self.course
     
 
-class course(models.Model):
+class Course(models.Model):
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    choose =  models.ForeignKey(Createcourse, on_delete=models.CASCADE)
+    choose =  models.ForeignKey(Createcourse,related_name='mycourse',  on_delete=models.CASCADE )
     Reason = models.TextField()
     date = models.DateField(auto_created=True)
     work = models.CharField(max_length=200, blank=True, null=True)

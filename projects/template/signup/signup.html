@@ -37,6 +37,7 @@ rel="stylesheet"
         <h3>Enter email and phone number </h3>
 
         <form method="post">
+          {% csrf_token %}
             <!-- Email input -->
             <div data-mdb-input-init class="form-outline mb-4">
               <input type="email" id="form1Example1" class="form-control" name="email" />

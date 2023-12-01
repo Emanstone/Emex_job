@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Users
+from .models import Users,Profile
 
 # Register your models here.
 
@@ -10,4 +10,15 @@ class CustomUserAdmin(admin.ModelAdmin):
     
     
 admin.site.register(Users, CustomUserAdmin)
+
+
+
+
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('user','email_verified','email_code',
+                    'location','state','username','adminsion',)
+    
+    
+    
+admin.site.register(Profile, ProfileAdmin)
     
