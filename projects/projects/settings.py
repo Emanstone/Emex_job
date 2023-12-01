@@ -130,3 +130,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.skylineict.com'  # Replace with your SMTP host
+EMAIL_PORT =  465  # Replace with your SMTP port
+EMAIL_USE_SSL = True
+# EMAIL_USE_TLS = True  # Use TLS encryption for security
+EMAIL_HOST_USER = 'techspace@skylineict.com'  # Replace with your email address
+EMAIL_HOST_PASSWORD = 'Monoskey@93'  # Replace with your email password

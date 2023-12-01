@@ -5,7 +5,7 @@ from .models import  Profile
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
 from django.contrib.auth import get_user_model
-
+from projects.settings import EMAIL_HOST_USER
 
 
 Users = get_user_model()
@@ -39,5 +39,16 @@ class Singup(View):
        generate_verfication = get_random_string(length=6)
        user_profile.email_code = generate_verfication 
        user_profile.save()
-       return HttpResponse('created account')
+       subject = "otp verification"
+       body = f"your verification code is: {generate_verfication}"
+       from_email = EMAIL_HOST_USER
+       toemail =  email
+       send_now = send_mail(subject, body,from_email, [toemail])
+       if send_now:
+           return HttpResponse('sent email, check your inbox')
+           
+
+
+      
+       
        return render(request, 'signup/signup.html')
