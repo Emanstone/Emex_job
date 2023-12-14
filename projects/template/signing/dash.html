@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://kit.fontawesome.com/188d62c901.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static './css/dashboard.css' %}">
+
+    {% comment %} <style>
+        .btn2{
+            animation: flash-red-green 1s ease-in-out infinite;
+        }
+
+        @keyframes flash-red-green {
+            0% {
+                background-color: darkred;
+            }
+            50% {
+                background-color: green;
+            }
+            100% {
+                background-color: darkred;
+            }
+        }
+
+    </style> {% endcomment %}
+
+</head>
+<body>
+    {% include "messages/message.html" %}
+    <div class="main-container">
+                
+        <!-- this is the main container with a cyan background -->
+        <div class="left-sidebar">
+            <!-- this div above is for the left side menu -->
+            <div class="image">
+                <div class="round">
+                    {% comment %} <img src="{{user.profile.profile_image.url}}" alt=""> {% endcomment %}
+                </div>
+            </div>
+                 
+            <div class="store">
+                <span class="size">Your storage</span>
+                
+                <span id="size">25% Left</span>
+                <p>75 GB of 100 GB are used</p>
+                
+                
+            </div>
+
+            <ul>
+                
+                <!-- created a separate div for the setting and log out to have control over it in styling -->
+                <div class="set">
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Settings</span> 
+                        </a>
+                    </li>
+                    <li>
+                        
+                      <a href="{% url 'logout' %}"><input type="button" value="Logout" style="margin-bottom: 20px;">
+                      
+                    </li>
+                </div>
+            </ul>
+            <!-- this is where the nav links end -->
+        </div>
+        <!-- the side-menu ends here -->
+
+        <div class="main">
+            <h2>My Dashboard</h2>
+            {% comment %} <h3>Welcome, <span>{{user.profile.fullname}}</span></h3> {% endcomment %}
+            <div class="main-mid">
+                <div class="search">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></i></button>
+                    <input type="text" name="" id="" placeholder="search"></div>
+
+                    <!-- This is where the first set of boxes begin -->
+                <span id="headings">Categories</span>
+                <div class="main1-center">
+                    <div class="box pic">
+                        <i class="fa-solid fa-camera"></i><i class="fa-solid fa-star"></i>
+                         <p>Pictures</p>
+                        <span id="fig">820 files</span>
+                    </div>
+                    <div class="box doc">
+                        <i class="fa-solid fa-copy"></i>
+                        <p>Documents</p>
+                        <span id="fig">190 files</span>
+                    </div>
+                    <div class="box vids">
+                        <i class="fa-solid fa-video"></i>
+                        <p>Video files</p>
+                        <span id="fig">30 files</span>
+                    </div>
+                    <div class="box aud">
+                        <i class="fa-solid fa-microphone"></i>
+                        <p>Audio files</p>
+                        <span id="fig">80 files</span>
+                    </div>
+                </div>
+
+                <!-- next line of boxes begins here -->
+                <!-- <span id="headings">Files</span> -->
+                <!-- <div class="main2-center">
+                    <div class="box2 work">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <p>Work</p>
+                        <p id="fig">820 files</p>
+                        <hr>
+                    
+                    </div>
+                    <div class="box2 pers">
+                        <i class="fa-solid fa-user"></i>
+                        <p>Personal</p>
+                        <p id="fig">115 files</p>
+                        <hr>
+                    </div>
+                    <div class="box2 sch">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        <p>School</p>
+                        <p id="fig">65 files</p>
+                        <hr>
+                    </div>
+                    <div class="box2 arch">
+                        <i class="fa-solid fa-box-archive"></i>
+                        <p>Archive</p>
+                        <p id="fig">21 files</p>
+                        <hr>
+                    </div>
+                    <div class="box2 add">
+                        <span><i class="fa-solid fa-plus"></i></span>
+                    </div>
+                </div> -->
+
+                <!-- Here is the end of the line two boxes -->
+
+                <!-- <span id="headings">Recent Files</span> -->
+                <!-- <div class="recen">
+                    <div id="img">
+                         
+                        <span id="fix"><i class="cam fa-solid fa-camera"></i> img_100000</span> 
+                        <span>PNG file</span> 
+                        <span>5 MB</span>
+                        <span><i class="fa-solid fa-share-nodes"></i></span>
+                        <span><i class="fa-solid fa-ellipsis"></i></span>
+                    </div>
+                    <div id="img">
+                        
+                        <span id="fix"><i class=" fa-solid fa-video mov"></i>Startup pitch</span> 
+                        <span>AVI file</span> 
+                        <span>105 MB</span>
+                        <span><i class="fa-solid fa-share-nodes"></i></span>
+                        <span><i class="fa-solid fa-ellipsis"></i></span>
+                    </div>
+                    <div id="img">
+                       
+                        <span id="fix" > <i class="mic fa-solid fa-microphone"></i> Freestyle beat</span> 
+                        <span>MP3 file</span> 
+                        <span>21 MB</span>
+                        <span><i class="fa-solid fa-share-nodes"></i></span>
+                        <span><i class="fa-solid fa-ellipsis"></i></span>
+                    </div>
+                    <div id="img">
+                        
+                        <span id="fix"><i class="doc fa-regular fa-file"></i>Work proposal</span> 
+                        <span>DOCx file</span> 
+                        <span>500 KB</span>
+                        <span><i class="fa-solid fa-share-nodes"></i></span>
+                        <span><i class="fa-solid fa-ellipsis"></i></span>
+                    </div>
+                </div> -->
+                
+            </div>
+    
+            <!-- here is the right side -->
+            <div class="main-right">
+                <div class="file">
+                    <h2><a href="{% url 'profile' %}">My Profile</a></h2>
+                    
+                    <!-- <h4><span style="color: dodgerblue; font-size: 20px;">User :</span>  {{ user.email }}</h4> -->
+                
+                    <!-- Profile Section -->
+                    <div class="profile-section">
+                        <!-- <ul> -->
+                            <h4><span style="color: dodgerblue; font-size: 18px;"><strong>Username :</strong></span><span>&nbsp;</span> {{ user.username }} </h4>
+                            <h4><span style="color: dodgerblue; font-size: 18px;"><strong>Email :</strong></span><span>&nbsp;</span> {{ user.email }}</h4>
+                            <h4><span style="color: dodgerblue; font-size: 18px;"><strong>Phone Number :</strong></span><span>&nbsp;</span> {{ user.phone_No }}</h4>
+                        <!-- </ul> -->
+                    </div>
+                    
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'proeditor' %}"><input type="button" class="btn2" value="update Profile" 
+                        style="background-color: darkred; color: white; padding: 15px; font-size: 16px;"> 
+                    {% endif %}
+                <br>
+
+                
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

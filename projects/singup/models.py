@@ -28,7 +28,7 @@ class Users(AbstractUser):
 
 admission_status = (
 
-    ('on progrss', "on progrss"),
+    ('on progress', "on progress"),
     ('approved', "approved")
 )
 
@@ -39,13 +39,14 @@ class Profile(models.Model):
     email_code = models.CharField(max_length=6, blank=True, null=True)
     location = models.CharField(max_length=100, blank=True, null=True)
     state = models.CharField(max_length=10, blank=True, null=True)
+    fullname = models.CharField(max_length=100, blank=True, null=True)
     username = models.CharField(max_length=50)
     current_digital_skills = models.TextField(blank=True, null=True)
     twitter_handle = models.CharField(max_length=100, blank=True, null=True)
     facebook_handle = models.CharField(max_length=100, blank=True, null=True)
     linkedin_handle = models.CharField(max_length=100, blank=True, null=True)
     profile_image = models.ImageField(upload_to='profile')
-    adminsion = models.CharField(choices=admission_status, default='on progrss', max_length=200)
+    admission = models.CharField(choices=admission_status, default='on progress', max_length=200)
     progress = models.IntegerField(default=0)
     date = models.DateTimeField(auto_now_add=True)
 

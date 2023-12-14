@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{% static '/tools/verifier.css' %}"> 
+    <title>Verify</title>
+</head>
+<body>
+    <!-- <div class="blue"> -->
+        <form method="post">
+            
+            {% csrf_token %}
+            <div class="white">
+                {% include "messages/message.html" %}
+                <h2 class="verifier"><i class="fa-regular fa-envelope icon"></i>
+                    <br>VERIFY YOUR EMAIL ADDRESS</h2>
+                <p class="sent">A verification code has been sent to
+                    <br><span class="">your email box</span></p>
+    
+                <p>Please check your inbox and enter the veirification
+                        <br>code below to verify your address. 
+                        <!-- The codewill expire in 14:48.</p> -->
+    
+                <!-- <div class="codeinputs">
+                    <div class="codebox">
+                        <input type="text" name="otp" id="otp" required>
+                    </div>
+                    <div class="codebox">
+                        <input type="text" name="otp" id="otp" required>
+                    </div>
+                    <div class="codebox">
+                        <input type="text" name="otp" id="otp" required>
+                    </div>
+                    <div class="codebox">
+                        <input type="text" name="otp" id="otp" required>
+                    </div>
+                    <div class="codebox">
+                        <input type="text" name="otp" id="otp" required>
+                    </div>
+                    <div class="codebox">
+                        <input type="text" name="otp" id="otp" required>
+                    </div>
+                </div> -->
+
+                <div class="codebox2">
+                    <input type="text" name="otp" id="otp" required>
+                </div> <br>
+    
+                <button type="submit" class="verification">Verify now</button>
+                    <!-- <button class="verification">Verify</button> -->
+    
+    
+                <!-- <p class="action">Resend Code<span class="change">Change email</span></p> -->
+    
+                <!-- <a class="footer" href="/Emex desk/verification.html">Back to previous page</a> -->
+            </div>
+        </form>
+        
+    <!-- </div> -->
+
+</body>
+</html>

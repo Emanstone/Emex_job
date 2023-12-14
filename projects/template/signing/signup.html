@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static '/tools/signup.css' %}"> 
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    crossorigin="anonymous"/>
+</head>
+<body>
+
+    <div class="formwrapper">
+        {% include "messages/message.html" %}
+        <form method="post">
+            {% csrf_token %}
+
+            <h1 class="login">Welcome<br><span class="create">Sign up to begin</span></h1>
+
+                <div class="inputbox">
+                    <fieldset>
+                        <legend>EMAIL</legend>
+                        <i class="fa-solid fa-user icon"></i>
+                    <input type="email" name="email" placeholder="email">
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <span class="error"></span>
+                    </fieldset>
+                </div>
+
+                <div class="inputbox">
+                    <fieldset>
+                        <legend>USERNAME</legend>
+                        <i class="fa-solid fa-lock icon"></i>
+                    <input type="text" name="username" placeholder="username">
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <span class="error"></span>
+                    </fieldset>
+                </div>
+
+                <button id="btn" type="submit" class="btn">Sign Up</button>
+                <div class="registerlink">
+                 <br>
+        </form>
+    </div>
+
+</body>
+</html>

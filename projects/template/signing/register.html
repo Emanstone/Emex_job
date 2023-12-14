@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="{% static '/tools/reg.css' %}"> 
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    crossorigin="anonymous"/>
+</head>
+<body>
+    <div class="formwrapper">
+
+     <div class="bmsg">
+        {% include "messages/message.html" %}
+     </div>   
+        <form method="post">
+            {% csrf_token %}
+            <i class="fa-solid fa-arrow-left arrow"></i>
+
+            <h1>Create Account <br><span class="create">Create a new account</span></h1>
+            <br>
+            <h5 style="text-align: center; font-style: italic;">DO NOT CLOSE THIS PAGE TILL YOU SET 
+                YOUR PASSWORD SUCCESSFULLY!</h5> <br>
+            <p style="text-align: center; color: dodgerblue;">{{user.email}}</p> <br>
+            <br>    
+
+            <div class="inputbox">
+                <fieldset>
+                <legend>USERNAME</legend>
+                <i class="fa-solid fa-user icon"></i>
+                <input type="text" id="username" name="username" required>
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon passed"></i>
+                <span class="error"></span>
+         </fieldset>
+        </div>
+
+
+                <div class="inputbox">
+                    <fieldset>
+                    <legend>Email</legend>
+                    <i class="fa-regular fa-envelope icon"></i>
+                    <input type="text" id="email" name="email" required>
+                        <i class="fas fa-exclamation-circle failure-icon failed"></i>
+                        <i class="far fa-check-circle success-icon passed"></i>
+                    <span class="error"></span>
+             </fieldset>
+            </div>
+
+                <div class="inputbox">
+                    <fieldset>
+                        <legend>PHONE</legend>
+                        <i class="fa-solid fa-mobile-screen-button icon"></i>
+                    <input type="tel" id="phone_number" name="phone_Number" required>
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <span class="error"></span>
+                    </fieldset>
+                </div>
+
+                <div class="inputbox">
+                    <fieldset>
+                        <legend>FULL NAME</legend>
+                        <i class="fa-solid fa-user icon"></i>
+                    <input type="text" id="fullname" name="fullname" required>
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <span class="error"></span>
+                    </fieldset>
+                </div>
+
+                <div class="inputbox">
+                    <fieldset>
+                        <legend>LOCATION</legend>
+                        <!-- <i class="fa-solid fa-user icon"></i> -->
+                        <i class="fa-solid fa-location-dot icon"></i>
+                    <input type="text" id="location" name="location" required>
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <span class="error"></span>
+                    </fieldset>
+                </div>
+
+                <div class="inputbox">
+                    <fieldset>
+                        <legend class="noborder">STATE</legend>
+                        <!-- <i class="fa-solid fa-user icon"></i> -->
+                        <label for="state">Choose:</label>
+                        <select id="state" name="state" required>
+                            <option value="Abia">Abia</option>
+                            <option value="Adamawa">Adamawa</option>
+                            <option value="Akwa-ibom">Akwa Ibom</option>
+                            <option value="Anambra">Anambra</option>
+                            <option value="Bauchi">Bauchi</option>
+                            <option value="Bayelsa">Bayelsa</option>
+                            <option value="Benue">Benue</option>
+                            <option value="Borno">Borno</option>
+                            <option value="Cross-river">Cross River</option>
+                            <option value="Delta">Delta</option>
+                            <option value="Ebonyi">Ebonyi</option>
+                            <option value="Edo">Edo</option>
+                            <option value="Ekiti">Ekiti</option>
+                            <option value="Enugu">Enugu</option>
+                            <option value="Gombe">Gombe</option>
+                            <option value="Imo">Imo</option>
+                            <option value="Jigawa">Jigawa</option>
+                            <option value="Kaduna">Kaduna</option>
+                            <option value="Kano">Kano</option>
+                            <option value="Katsina">Katsina</option>
+                            <option value="Kebbi">Kebbi</option>
+                            <option value="Kogi">Kogi</option>
+                            <option value="Kwara">Kwara</option>
+                            <option value="Lagos">Lagos</option>
+                            <option value="Nasarawa">Nasarawa</option>
+                            <option value="Niger">Niger</option>
+                            <option value="Ogun">Ogun</option>
+                            <option value="Ondo">Ondo</option>
+                            <option value="Osun">Osun</option>
+                            <option value="Oyo">Oyo</option>
+                            <option value="Plateau">Plateau</option>
+                            <option value="Rivers">Rivers</option>
+                            <option value="Sokoto">Sokoto</option>
+                            <option value="Taraba">Taraba</option>
+                            <option value="Yobe">Yobe</option>
+                            <option value="Zamfara">Zamfara</option>
+                            <option value="FCT">Federal Capital Territory (FCT)</option>
+                          </select>
+
+                    <!-- <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <span class="error"></span> -->
+                    </fieldset>
+                </div>
+
+                <div class="inputbox">
+                    <fieldset>
+                        <legend>PASSWORD</legend>
+                        <i class="fa-solid fa-lock icon"></i>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <span class="error"></span>
+                    </fieldset>
+                </div>
+
+                <div class="inputbox">
+                    <fieldset>
+                        <legend>COMFIRM PASSWORD</legend>
+                        <i class="fa-solid fa-lock icon"></i>
+                    <input type="password" name="password2" id="password2" placeholder="confirm Password" required>
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <span class="error"></span>
+                    </fieldset>
+                </div>
+    
+                <br>
+
+                <!-- <button id="btn" type="submit" class="btn">Create Account</button> -->
+                <button type="submit" class="btn">Create Account</button>
+
+                <!-- <div class="registerlink">
+                 <p>Already have an account? <a href="/loginnverification/login.html">Login</a></p>
+                 <br> -->
+        </form>
+    </div>
+
+    <!-- <script src="/tools/val.js"></script> -->
+
+</body>
+</html>

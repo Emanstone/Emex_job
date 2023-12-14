@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="https://kit.fontawesome.com/a76070024d.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            font-family: 'poppings', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        .container {
+            /* width: 500px; */
+            width: 60vw;
+            margin: 0 auto;
+            border: 2px solid skyblue;
+            border-radius: 10px;
+            height: 100vh;
+            margin-top: 1px;
+            padding: 10px;
+        }
+
+        .flexx {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+        }
+
+        .flexx1{
+            width: 45%;
+        }
+
+        .flexx2 {
+            width: 45%;
+        }
+
+        .flexx2 .skill {
+            padding-left: 70px;
+        }
+    
+        .conhead {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+    
+        .pimg img {
+            border: 1px solid skyblue;
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            margin-bottom: 10px;
+        }
+
+        .mark i{
+            font-weight: bold;
+            color: darkgreen;
+            font-size: 30px;
+            position: absolute;
+            right: 44%;
+            top: 18.5%;
+        }
+
+        .datas {
+            margin-bottom: 8px;
+        }
+
+        .datas span{
+            font-size: 15px;
+        }
+
+        .datas span1{
+            color: blue;
+        }
+
+        section {
+            /* margin: 10px 0 10px 0; */
+            margin: 6px 0 0 0;
+            text-align: center;
+            padding: 0 5px;
+        }
+
+        .skill {
+            font-size: 14px;
+        }
+
+        section p{
+            font-size: 17px;
+            border: 2px solid black;
+            height: 40vh;
+            border-radius: 10px;
+        }
+
+        .social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-top: 15px;
+        }
+
+        .social i {
+            margin: 10px 40px 20px 40px;
+        }
+
+        input {
+            margin-top: 20px;
+            font-weight: bold;
+            border: 3px solid skyblue;
+            padding: 5px 30px;
+            border-radius: 15px;
+            background-color: black;
+            cursor: pointer;
+            color: white;
+        }
+
+        .boton {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+
+        .conhead .mark .fa-circle-check[data-profile-complete="True"] {
+            color: green;
+        }
+        
+        
+        .conhead .mark .fa-circle-check[data-profile-complete="False"] {
+            color: red;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        {% include "messages/message.html" %}
+        <div class="flez">
+            <div class="conhead">
+                <div class="pimg">
+                    <img src="{{user.profile.profile_image.url}}" width="90x" height="90px" alt="">
+                </div>
+                {% comment %} {{ user_profile.profile_image_url }} {% endcomment %}
+                {% comment %} <div class="mark">
+                    <i class="fa-solid fa-circle-check" data-profile-complete="{{ profile_complete }}"></i>
+                </div> {% endcomment %}
+            </div>
+        </div>
+
+        <div class="flexx">
+            <div class="flexx1">
+        
+                <div class="datas">
+                    <span class="uname"><strong>Username</strong> : <span1>{{ user.username }}</span1></span>
+            
+                </div>
+        
+                <div class="datas">
+                    <span class="mail"><strong>Email</strong> : <span1>{{ user.email }}</span1></span>
+            
+                </div>
+        
+        
+                <div class="datas">
+                    <span class="phone"><strong>Phone Number</strong> : <span1>{{ user.phone_No }}</span1></span>
+            
+                </div>
+
+                <div class="datas">
+                    <span class="nam"><strong>Full Name</strong> : <span1>{{ user.profile.fullname }}</span1></span>
+            
+                </div>
+        
+                <div class="datas">
+                    <span class="locate"><strong>Current Location</strong> : <span1>{{ user.profile.location }}</span1></span>
+            
+                </div>
+        
+                <div class="datas">
+                    <span class="stat"><strong>State</strong> : <span1>{{ user.profile.state }}</span1></span>
+            
+                </div>
+        
+                <div class="datas">
+                    <span class="soc"><strong>Twitter Handle</strong> : <span1>{{ user.profile.twitter_handle }}</span1></span>
+            
+                </div>
+        
+                <div class="datas">
+                    <span class="soc"><strong>Facebook Handle</strong> : <span1>{{ user.profile.facebook_handle }}</span1></span>
+            
+                </div>
+        
+                <div class="datas">
+                    <span class="soc"><strong>Linkedin Handle</strong> : <span1>{{ user.profile.linkedin_handle }}</span1></span>
+            
+                </div>
+
+            </div>
+
+            <div class="flexx2">
+                <span class="skill"><strong>Your current digital skills</strong>:</span>
+                <section>
+                    <p class="skills" placeholder="Your current digital skills">{{ user.profile.current_digital_skills }}</p>
+                </section>
+
+            </div>
+        </div>
+        
+        
+        <div class="social">
+            <a href="#" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-google-plus-g"></i></a>
+        </div>
+
+        <div class="boton">
+            <a href="{% url 'proeditor' %}"><input type="button" class="btn btn-success btn-sm" value="Update Your Profile">
+            <a href="{% url 'dash' %}"> <input type="button" class="btn btn-primary btn-sm" value="Back To Dashboard">
+        </div>
+        
+    </div>
+   
+</body>
+</html>

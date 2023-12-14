@@ -11,14 +11,14 @@ admission_status = (
     ('approved', "approved")
 )
 
-# class Admission(models.Model):
-#     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-#     date_applied = models.DateTimeField(auto_now_add=True)
-#     status = models.CharField(choices=admission_status, default='pending', max_length=200)
-#     progress = models.IntegerField(default=0)  # In percentage
+class Admissions(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    date_applied = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(choices=admission_status, default='pending', max_length=200)
+    progress = models.IntegerField(default=0)  # In percentage
 
-    # def __str__(self):
-    #     return self.date_applied
+    def __str__(self):
+        return self.date_applied
     
 
 class CreateTask(models.Model):

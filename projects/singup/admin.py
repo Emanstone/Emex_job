@@ -16,7 +16,7 @@ admin.site.register(Users, CustomUserAdmin)
 
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('user','email_verified','email_code',
-                    'location','state','username','adminsion',)
+                    'location','state','admission', 'fullname')
     
     
     

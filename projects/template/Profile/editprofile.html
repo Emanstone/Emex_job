@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<!-- {% load static %} -->
+
+<html lang="en">
+
+
+    <style>
+
+        form{
+            width: 38%;
+            margin: auto;
+            margin-bottom: 15px;
+            display: block;
+            height: 85vh;
+            padding-left: 40px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            width: 90%;
+        }
+
+        textarea {
+            margin-bottom: 5px;
+            width: 90%;
+        }
+
+
+        h3 {
+            text-align: center;
+            color: green;
+        }
+
+        .btn{
+            text-align: center;
+            margin: auto;
+        }
+
+
+    </style>
+
+        
+    <body>
+        
+        <!-- Page content-->
+      
+        <div class="container">
+
+            <h3>Edit Your Profile</h3>
+
+            <form method="post" enctype="multipart/form-data" action="{% url 'proeditor' %}">
+                {% csrf_token %}
+                <label for="profileImage">Profile Image:</label>
+                <input type="file" name="postimage" id="profileImage">
+
+
+                <input type="text" name="fullname" id="fullname" placeholder="Fullname" value="{{ form_data.fullname }}">
+
+                
+                <input type="text" name="location" id="location" placeholder="Location" value="{{ form_data.location }}">
+
+                
+                <input type="text" name="state" id="state" placeholder="state" value="{{ form_data.state }}">
+
+                
+                <textarea name="current_digital_skills" id="body" placeholder="Your current digita skills" rows="2">{{ form_data.current_digital_skills }}</textarea>
+
+                
+                <input type="text" name="twitter" id="twitter" placeholder="Twitter Hanadle" value="{{ form_data.Twitter }}">
+
+                
+                <input type="text" name="facebook" id="facebook" placeholder="Facebook Handle" value="{{ form_data.Facebook }}">
+
+                
+                <input type="text" name="linkedin" id="linkedin" placeholder="Linkedin Handle" value="{{ form_data.linkedin }}">
+
+
+                <a href="{% url 'proeditor' %}"><input type="submit" value="Save" class="btn btn-success">
+
+            </form>
+
+            </div>
+
+        </div>
+
+
+    </body>
+
+
+</html>

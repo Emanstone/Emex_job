@@ -1,0 +1,123 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+body{
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 90, 0.15);
+    /* background:url(../images/pexels-baskin-creative-studios-1766838.jpg) no-repeat; */
+}
+
+/* This part below is the styhling for the veification page */
+.blue{
+    background-color: #3399ff;
+    padding: 60px 60px 0 60px;
+}
+/* .big-white{
+
+} */
+.white{
+    background-color: #fff;
+    /* margin: 60px 60px 0 60px; */
+    min-width: 400px;
+    max-width: 600px;
+    max-width: 100%;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+    /* border: 2px solid #333; */
+    /* backdrop-filter: blur(40px); */
+}
+.white img{
+    width: 400px;
+    margin-top: 150px;
+    /* height: 170px; */
+    /* padding-right: 40px; */
+    /* padding-top: 70px; */
+    /* border: 1px slolid red; */
+    /* position: absolute; */
+    /* top: 0; */
+}
+h2{
+    padding-bottom: 30px;
+}
+p{
+    padding-bottom: 30px;
+}
+.message{
+    color: #333;
+    font-weight: bold;
+    /* font-size: 20px; */
+}
+/* This is the class name for the verification button */
+.verification{
+    font-size: 16px;
+    font-weight: bold;
+    /* width: 100px; */
+    background-color: #3399ff;
+    color: #fff;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border: none;
+}
+.verification a{
+    color: #fff;
+    text-decoration: none;
+}
+.verification:hover{
+    font-size: 25px;
+    padding: 10px 40px;
+    /* box-shadow: 5px 5px 1px #333; */
+}
+p a{
+    color: #3399ff;
+}
+.change{
+    padding-left: 230px;
+}
+.codeinputs{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding-bottom: 20px;
+    /* margin: auto; */
+}
+.codebox input{
+    width: 60px;
+    height: 60px;
+    /* font-size: 40px; */
+}
+.icon{
+    font-size: 40px;
+    color: #3399ff;
+    padding-top: 60px;
+}
+.verifier{
+    border-bottom: 1px solid;
+    margin: auto 90px 30px 90px;
+
+}
+.sent{
+    font-weight: bold;
+}
+.action{
+    color: #3399ff;
+}
+.footer{
+    position: absolute;
+    bottom: -120px;
+    left: 220px;
+    text-decoration: none;
+}
+
+.codebox2 {
+    width: 15vw;
+    margin-left: 39.5%;
+}

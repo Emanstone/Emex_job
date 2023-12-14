@@ -1,0 +1,205 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 90, 0.15);
+    /* background:url(../images/pexels-baskin-creative-studios-1766838.jpg) no-repeat; */
+}
+img{
+    height: 70px;
+    width: 150px;
+    /* margin-top: 60px; */
+    /* margin-left: 80px; */
+    margin: 100px 0px 10px 80px;
+}
+fieldset{
+    border-color: rgba(0, 0, 90, 0.15);
+    height: 50px;
+    /* margin-top: 20px; */
+    /* padding-bottom: 10px; */
+}
+legend{
+    color: rgba(0, 0, 90, 0.5);
+    margin-left: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+h1{
+    color: #3399ff;
+}
+.login{
+
+    padding-bottom:60px;
+}
+.icon{
+    color: #3399ff;
+    margin-left: 10px;
+    position: absolute;
+    top: 20px;
+}
+.arrow{
+    color: #3399ff;
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+.create{
+    font-size: 14px;
+}
+.formwrapper{
+    width: 420px;
+    background-color: #fff;
+    color: #blue;
+    border-radius: 40px;
+    padding: 5px 40px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px)
+}
+.formwrapper h1{
+    font-size: 36px;
+    text-align: center;
+}
+.formwrapper .inputbox{
+    font-size: 16px;
+    position: relative;
+    width: 100%;
+    height:50px;
+    /* background: yellow; */
+    margin: 0px 0px 30px 0px;
+    /* padding-bottom: 20px; */
+}
+.inputbox{
+    padding-bottom: 10px;
+}
+.inputbox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    outline: none;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #blue;
+    padding: 10px 45px 20px 40px;
+}
+.inputbox input::placeholder{
+    color: #blue;
+}
+/* .inputbox i{
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    transform: translate(50%);
+    font-size: 20px;
+} */
+.formwrapper .rememberforgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+.rememberfogot label input{
+    accent-color: #fff;
+    margin-right: 3px;
+}
+.rememberforgot a{
+    color: #fff;
+    text-decoration: none ;
+}
+.rememberforgot a:hover{
+    text-decoration: underline;
+}
+.formwrapper .btn{
+    width: 100%;
+    height: 45px;
+    /* color: #fff; */
+    background: #3399ff;
+    border: none;
+    outline: none;
+    /* border-radius: 40px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+.formwrapper .registerlink{
+    font-size: 14.5px;
+    text-align: center;
+    margin-top: 20px 0 15px;
+    padding-top: 20px;
+}
+.registerlink{
+    padding-bottom: 60px;
+}
+.registerlink p a{
+    color: #3399ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.registerlink p a:hover{
+    text-decoration: underline;
+}
+
+.formwrapper h3{
+    /* font-size: 36px; */
+    text-align: center;
+    margin: 20px 0px;
+}
+
+/* Signup form begins here */
+.registerlink a{
+    color: #FFFFFF;
+}
+
+.error {
+    color: red;
+  }
+  
+/* .passed, .failed{
+      opacity: 0;
+      display: none;
+  } */
+  
+  .success-icon {
+    color: green;
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    opacity: 0;
+  }
+  
+  .failure-icon {
+    color: red;
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    opacity: 0;
+  }
+  
+  .error {
+    font-size: 14.5px;
+    margin-top: 5px;
+  }
+  
+#btn{
+    color: #fff;
+  }
+
+
+  /* label{
+    border: 1px solid blue;
+  } */
+  
+  /* label {
+      display: block;
+      margin-bottom: 5px;
+    } */
+
+    
